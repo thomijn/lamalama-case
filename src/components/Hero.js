@@ -29,7 +29,7 @@ const Hero = () => {
   return (
     <Wrapper>
       <video className="hero-video" autoPlay muted loop>
-        <source src="/assets/video/play_720p.mp4" type="video/mp4" />
+        <source src="/assets/video/video.mp4" type="video/mp4" />
       </video>
       <div className="hero-content ">
         <h1 className="content">We enable companies to gift trees</h1>

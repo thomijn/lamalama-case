@@ -69,7 +69,7 @@ const MouseFollow = () => {
 
   return (
     <mesh material-opacity={0} ref={mesh}>
-      <circleBufferGeometry args={[5, 32]} />
+      <planeBufferGeometry args={[8, 8]} />
       <mouseFollowMaterial
         transparent
         ref={ref}
