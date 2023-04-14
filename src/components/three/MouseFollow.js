@@ -63,7 +63,7 @@ const MouseFollow = () => {
     window.addEventListener("mousemove", (evt) => {
       //check if any parent of the element has the class content
       if (evt.target.classList.contains("content")) {
-        setHoveredOverContent(true);
+        setHoveredOverContent(false);
       } else {
         setHoveredOverContent(false);
       }
