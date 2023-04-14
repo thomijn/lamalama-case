@@ -15,7 +15,9 @@ const Header = ({ fonts }) => {
   }, []);
 
   return (
-    <Wrapper className={`${fonts[0].variable} ${fonts[1].variable} header`}>
+    <Wrapper
+      className={`${fonts[0].variable} ${fonts[1].variable} header content`}
+    >
       <div className="left">
         <i>
           <img src="./assets/images/logo.svg" alt="logo" />
@@ -53,6 +55,7 @@ const Wrapper = styled.header`
   color: var(--color-text);
   font-family: var(--font-base);
   font-weight: 400;
+  z-index: 100;
 
   .left {
     display: flex;

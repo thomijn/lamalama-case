@@ -31,9 +31,9 @@ const Hero = () => {
       <video className="hero-video" autoPlay muted loop>
         <source src="/assets/video/play_720p.mp4" type="video/mp4" />
       </video>
-      <div className="hero-content">
-        <h1>We enable companies to gift trees</h1>
-        <p>
+      <div className="hero-content ">
+        <h1 className="content">We enable companies to gift trees</h1>
+        <p className="content">
           Join our movement and start giving the 100% sustainable corporate
           gift.
         </p>

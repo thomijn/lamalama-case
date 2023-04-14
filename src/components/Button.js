@@ -12,7 +12,11 @@ const Button = (props) => {
     throw new Error(`Unrecognized Button variant: ${variant}`);
   }
 
-  return <Component {...otherProps}>{children}</Component>;
+  return (
+    <Component className="content" {...otherProps}>
+      {children}
+    </Component>
+  );
 };
 
 const ButtonBase = styled.button`

@@ -3,6 +3,7 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import gsap from "gsap";
 
 import { WaveMaterial } from "./WaveMaterial";
+import MouseFollow from "./MouseFollow";
 
 function ShaderPlane() {
   const ref = useRef();
@@ -41,6 +42,7 @@ export default function Scene() {
       }}
     >
       <Canvas>
+        <MouseFollow />
         <ShaderPlane />
       </Canvas>
     </div>
