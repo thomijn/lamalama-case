@@ -16,7 +16,7 @@ const MouseFollow = () => {
     ref.current.time += delta;
 
     mesh.current.position.lerp(
-      new THREE.Vector3(mouse.x * width * 0.5, mouse.y * height * 0.5, 0),
+      new THREE.Vector3(mouse.x * width * 0.05, mouse.y * height * 0.05, 0),
       0.05
     );
 
@@ -76,7 +76,7 @@ const MouseFollow = () => {
 
   return (
     <mesh ref={mesh}>
-      <circleBufferGeometry args={[1.5, 32]} />
+      <circleBufferGeometry args={[5, 32]} />
       <mouseFollowMaterial
         transparent
         ref={ref}
