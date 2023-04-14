@@ -5,7 +5,7 @@ import { shaderMaterial } from "@react-three/drei";
 const WaveMaterial = shaderMaterial(
   {
     time: 0,
-    value: 0.999,
+    value: 0.995,
     colorStart: new THREE.Color("#505050"),
     colorEnd: new THREE.Color("black"),
   },

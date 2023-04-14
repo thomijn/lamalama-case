@@ -6,6 +6,7 @@ const MouseFollowMaterial = shaderMaterial(
   {
     speed: 0,
     time: 0,
+    value: 0,
   },
   `
       varying vec2 vUv;
@@ -20,6 +21,7 @@ const MouseFollowMaterial = shaderMaterial(
   varying vec2 vUv;
   uniform float time;
   uniform float speed;
+  uniform float value;
   //	Classic Perlin 3D Noise 
   //	by Stefan Gustavson
   //
@@ -96,13 +98,13 @@ const MouseFollowMaterial = shaderMaterial(
   }
   void main()
   {
-      vec2 displacedUv = vUv + cnoise(vec3(vUv * 5.0, time * 0.1));
-      float strength = step(0.999, sin(cnoise(vec3(vUv * 3.0, time * 0.1)) * 10.0));  
+      vec2 displacedUv = vUv + cnoise(vec3(vUv * 5.0, time * 0.05));
+      float strength = step(0.99, sin(cnoise(vec3(vUv * 3.0, time * 0.05)) * 10.0));  
       vec3 color = vec3(244.0 / 255.0, 243.0 / 255.0, 232.0 / 255.0);
       float outerGlow = distance(vUv, vec2(0.5)) * 5.0 - 1.4;
       float alpha = 1.0 - smoothstep(0.4, 1.0, outerGlow);
       
-      gl_FragColor = vec4(strength * color,  alpha * strength);
+      gl_FragColor = vec4(strength * color,  alpha * strength * value);
   }`
 );
 
