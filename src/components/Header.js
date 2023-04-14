@@ -9,7 +9,7 @@ const Header = ({ fonts }) => {
     gsap.to(".header", {
       y: 0,
       duration: 1,
-      delay: 3,
+      delay: 1.5,
       ease: "power2.inOut",
     });
   }, []);

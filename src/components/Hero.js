@@ -22,7 +22,7 @@ const Hero = () => {
           duration: 1,
           ease: "power2.inOut",
         },
-        ">+=1.5"
+        ">+=.5"
       );
   }, []);
 
