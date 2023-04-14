@@ -12,7 +12,7 @@ const Hero = () => {
       .to(".hero-video", {
         opacity: 1,
         duration: 1,
-        delay: 1,
+        delay: 0.2,
         ease: "linear",
       })
       .to(

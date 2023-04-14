@@ -16,7 +16,7 @@ function ShaderPlane() {
     gsap.to(ref.current, {
       value: -1,
       duration: 1,
-      delay: 2.5,
+      delay: 1,
       ease: "power4.inOut",
     });
   }, []);
