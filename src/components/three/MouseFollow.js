@@ -16,7 +16,7 @@ const MouseFollow = () => {
     ref.current.time += delta;
 
     mesh.current.position.lerp(
-      new THREE.Vector3(mouse.x * width * 0.05, mouse.y * height * 0.05, 0),
+      new THREE.Vector3(mouse.x * width * 0.01 + 3, mouse.y * height * 0.01, 0),
       0.05
     );
 
