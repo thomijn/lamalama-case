@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import gsap from "gsap";
+
 import Button from "./Button";
 
 const Hero = () => {

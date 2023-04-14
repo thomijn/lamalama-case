@@ -1,7 +1,8 @@
 import { useEffect, useRef } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { WaveMaterial } from "./WaveMaterial";
 import gsap from "gsap";
+
+import { WaveMaterial } from "./WaveMaterial";
 
 function ShaderPlane() {
   const ref = useRef();
