@@ -4,9 +4,11 @@ import { shaderMaterial } from "@react-three/drei";
 
 const MouseFollowMaterial = shaderMaterial(
   {
-    speed: 0,
+    speed: 0.05,
     time: 0,
     value: 0,
+    color: new THREE.Color("red"),
+    linewidth: 0.99,
   },
   `
       varying vec2 vUv;
@@ -22,6 +24,9 @@ const MouseFollowMaterial = shaderMaterial(
   uniform float time;
   uniform float speed;
   uniform float value;
+  uniform vec3 color;
+  uniform float linewidth;
+
   //	Classic Perlin 3D Noise 
   //	by Stefan Gustavson
   //
@@ -98,9 +103,9 @@ const MouseFollowMaterial = shaderMaterial(
   }
   void main()
   {
-      vec2 displacedUv = vUv + cnoise(vec3(vUv * 5.0, time * 0.05));
-      float strength = step(0.99, sin(cnoise(vec3(vUv * 3.0, time * 0.05)) * 10.0));  
-      vec3 color = vec3(244.0 / 255.0, 243.0 / 255.0, 232.0 / 255.0);
+      vec2 displacedUv = vUv + cnoise(vec3(vUv * 5.0, time * speed));
+      float strength = step(linewidth, sin(cnoise(vec3(vUv * 3.0, time * speed)) * 10.0));  
+      // vec3 color = vec3(244.0 / 255.0, 243.0 / 255.0, 232.0 / 255.0);
       float outerGlow = distance(vUv, vec2(0.5)) * 5.0 - 1.4;
       float alpha = 1.0 - smoothstep(0.4, 1.0, outerGlow);
       
