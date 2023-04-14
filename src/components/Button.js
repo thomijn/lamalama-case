@@ -23,7 +23,7 @@ const ButtonBase = styled.button`
   padding: 1rem 2rem;
   border-radius: 99999px;
   border: none;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 500;
   cursor: pointer;
   display: flex;

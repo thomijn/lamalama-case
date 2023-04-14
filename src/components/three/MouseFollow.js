@@ -76,7 +76,7 @@ const MouseFollow = () => {
 
   return (
     <mesh ref={mesh}>
-      <circleBufferGeometry args={[0.5, 32]} />
+      <circleBufferGeometry args={[1.5, 32]} />
       <mouseFollowMaterial
         transparent
         ref={ref}

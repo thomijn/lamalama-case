@@ -99,7 +99,7 @@ const MouseFollowMaterial = shaderMaterial(
       vec2 displacedUv = vUv + cnoise(vec3(vUv * 5.0, time * 0.1));
       float strength = step(0.95, sin(cnoise(vec3(vUv * 3.0, time * 0.1)) * 10.0));  
       vec3 color = vec3(244.0 / 255.0, 243.0 / 255.0, 232.0 / 255.0);
-      float outerGlow = distance(displacedUv, vec2(0.5)) * 5.0 - 1.4;
+      float outerGlow = distance(vUv, vec2(0.5)) * 5.0 - 1.4;
       float alpha = 1.0 - smoothstep(0.4, 1.0, outerGlow);
       
       gl_FragColor = vec4(strength * color,  alpha * strength);
