@@ -29,7 +29,7 @@ const Hero = () => {
   return (
     <Wrapper>
       <video className="hero-video" autoPlay muted loop>
-        <source src="/assets/video/video2.mp4" type="video/mp4" />
+        <source src="/assets/video/play_720p 2.mp4" type="video/mp4" />
       </video>
       <div className="hero-content ">
         <h1 className="content">We enable companies to gift trees</h1>
@@ -87,6 +87,21 @@ const Wrapper = styled.div`
       font-weight: 400;
       color: var(--color-white);
       font-size: 1.7rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-content {
+      padding-inline: 2rem;
+
+      h1 {
+        font-size: 3.5rem;
+        line-height: 3.2rem;
+      }
+
+      p {
+        font-size: 1.3rem;
+      }
     }
   }
 `;

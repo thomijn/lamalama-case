@@ -4,7 +4,6 @@ import * as THREE from "three";
 import gsap from "gsap";
 
 import { MouseFollowMaterial } from "./MouseFollowMaterial";
-import { useControls } from "leva";
 import { COLORS } from "@/constants";
 
 let previousPosition = new THREE.Vector3();
@@ -13,16 +12,12 @@ const MouseFollow = () => {
   const mesh = useRef();
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
   const { width, height } = useThree((state) => state.viewport);
-  const { color, speed, lineWidth } = useControls({
-    color: { value: COLORS.background, label: "Color" },
-    lineWidth: { value: 0.99, min: 0.01, max: 0.999, label: "Line Width" },
-    speed: { value: 0.1, min: 0.01, max: 0.5, label: "Speed" },
-  });
+
   useFrame((state, delta) => {
     ref.current.time += delta;
-    ref.current.color = new THREE.Color(color);
-    ref.current.linewidth = lineWidth;
-    ref.current.speed = speed;
+    ref.current.color = new THREE.Color(COLORS.background);
+    ref.current.linewidth = 0.99;
+    ref.current.speed = 0.1;
 
     mesh.current.position.lerp(
       new THREE.Vector3(mouse.x * width * 0.1 + 3.5, mouse.y * height * 0.1, 0),
@@ -61,7 +56,6 @@ const MouseFollow = () => {
   };
 
   useEffect(() => {
-    // fade in custom shader opacity with gsap after 3 seconds
     gsap.to(ref.current, {
       value: 1,
       duration: 1,
@@ -77,7 +71,7 @@ const MouseFollow = () => {
   }, []);
 
   return (
-    <mesh material-opacity={0} ref={mesh}>
+    <mesh ref={mesh}>
       <planeBufferGeometry args={[8, 8]} />
       <mouseFollowMaterial
         transparent
