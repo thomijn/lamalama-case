@@ -9,10 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-three/drei": "^9.65.3",
+    "@react-three/fiber": "^8.12.0",
+    "@types/three": "^0.150.1",
+    "babel-plugin-glsl": "^1.0.0",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
+    "leva": "^0.9.34",
     "next": "13.3.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "styled-components": "^5.3.9",
+    "three": "^0.151.3"
+  },
+  "devDependencies": {
+    "@types/node": "18.15.11",
+    "@types/react": "18.0.35"
   }
 }
