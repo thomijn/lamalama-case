@@ -6,12 +6,24 @@ import Button from "./Button";
 
 const Hero = () => {
   useEffect(() => {
-    gsap.to(".hero-video", {
-      opacity: 1,
-      duration: 1,
-      delay: 1,
-      ease: "linear",
-    });
+    const timeline = gsap.timeline();
+
+    timeline
+      .to(".hero-video", {
+        opacity: 1,
+        duration: 1,
+        delay: 1,
+        ease: "linear",
+      })
+      .to(
+        ".hero-content",
+        {
+          opacity: 1,
+          duration: 1,
+          ease: "power2.inOut",
+        },
+        ">+=1.5"
+      );
   }, []);
 
   return (
@@ -59,6 +71,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     gap: var(--space-lg);
+    opacity: 0;
 
     h1 {
       font-weight: 400;

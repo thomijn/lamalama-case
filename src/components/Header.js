@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
+import gsap from "gsap";
+
 import Button from "./Button";
 
 const Header = ({ fonts }) => {
+  useEffect(() => {
+    gsap.to(".header", {
+      y: 0,
+      duration: 1,
+      delay: 3,
+      ease: "power2.inOut",
+    });
+  }, []);
+
   return (
-    <Wrapper className={`${fonts[0].variable} ${fonts[1].variable}`}>
+    <Wrapper className={`${fonts[0].variable} ${fonts[1].variable} header`}>
       <div className="left">
         <i>
           <img src="./assets/images/logo.svg" alt="logo" />
@@ -32,7 +43,7 @@ const Wrapper = styled.header`
   width: calc(100% - 20px);
   height: 70px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(-100px);
   margin-top: 10px;
   background: var(--color-secondary);
   display: flex;
