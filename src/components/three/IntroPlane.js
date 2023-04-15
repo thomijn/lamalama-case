@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import gsap from "gsap";
 
-import { WaveMaterial } from "./WaveMaterial";
+import { IntroPlaneMaterial } from "./IntroPlaneMaterial";
 
 export default function IntroPlane() {
   const ref = useRef();
@@ -24,7 +24,7 @@ export default function IntroPlane() {
   return (
     <mesh scale={[width, height, 1]}>
       <planeGeometry />
-      <waveMaterial ref={ref} key={WaveMaterial.key} />
+      <introPlaneMaterial ref={ref} key={IntroPlaneMaterial.key} />
     </mesh>
   );
 }

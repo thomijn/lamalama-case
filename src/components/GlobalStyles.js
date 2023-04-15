@@ -19,6 +19,7 @@ const GlobalStyles = createGlobalStyle`
     --color-primary: ${COLORS.primary};
     --color-secondary: ${COLORS.secondary};
     --color-text: ${COLORS.textColor};
+    --color-darkGreen: ${COLORS.darkGreen};
 }
 
 *, *::before, *::after {

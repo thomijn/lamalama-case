@@ -2,7 +2,7 @@ import * as THREE from "three";
 import { extend } from "@react-three/fiber";
 import { shaderMaterial } from "@react-three/drei";
 
-const MouseFollowMaterial = shaderMaterial(
+const HeroPlaneMaterial = shaderMaterial(
   {
     speed: 0.05,
     time: 0,
@@ -113,6 +113,6 @@ const MouseFollowMaterial = shaderMaterial(
   }`
 );
 
-extend({ MouseFollowMaterial });
+extend({ HeroPlaneMaterial });
 
-export { MouseFollowMaterial };
+export { HeroPlaneMaterial };

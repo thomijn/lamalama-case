@@ -5,6 +5,7 @@ export const COLORS = {
   primary: "#DCFEBC",
   secondary: "#1B4650",
   textColor: "#F5F5F5",
+  darkGreen: "#0F2D2E"
 };
 
 export const LINKS = [

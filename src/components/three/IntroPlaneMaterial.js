@@ -1,7 +1,7 @@
 import { extend } from "@react-three/fiber";
 import { shaderMaterial } from "@react-three/drei";
 
-const WaveMaterial = shaderMaterial(
+const IntroPlaneMaterial = shaderMaterial(
   {
     time: 0,
     value: 0.995,
@@ -104,6 +104,6 @@ const WaveMaterial = shaderMaterial(
   }`
 );
 
-extend({ WaveMaterial });
+extend({ IntroPlaneMaterial });
 
-export { WaveMaterial };
+export { IntroPlaneMaterial };

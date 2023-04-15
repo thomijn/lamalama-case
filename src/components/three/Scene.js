@@ -1,6 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 
-import MouseFollow from "./MouseFollow";
+import HeroPlane from "./HeroPlane";
 import IntroPlane from "./IntroPlane";
 import styled from "styled-components";
 
@@ -8,7 +8,7 @@ export default function Scene() {
   return (
     <Wrapper>
       <Canvas>
-        <MouseFollow />
+        <HeroPlane />
         <IntroPlane />
       </Canvas>
     </Wrapper>

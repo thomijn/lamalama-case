@@ -13,6 +13,8 @@ const Button = (props) => {
     Component = PrimaryButton;
   } else if (variant === "outlined") {
     Component = OutlinedButton;
+  } else if (variant === "default") {
+    Component = DefaultButton;
   } else {
     throw new Error(`Unrecognized Button variant: ${variant}`);
   }
@@ -82,6 +84,15 @@ const OutlinedButton = styled(ButtonBase)`
   transition: all 0.3s ease-in-out;
   &:hover {
     color: var(--color-secondary);
+  }
+`;
+
+const DefaultButton = styled(ButtonBase)`
+  background-color: var(--color-darkGreen);
+  color: var(--color-text);
+
+  &:hover {
+    color: var(--color-darkGreen);
   }
 `;
 

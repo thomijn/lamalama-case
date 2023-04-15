@@ -3,11 +3,11 @@ import { useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import gsap from "gsap";
 
-import { MouseFollowMaterial } from "./MouseFollowMaterial";
+import { HeroPlaneMaterial } from "./HeroPlaneMaterial";
 import { COLORS } from "@/constants";
 
 let previousPosition = new THREE.Vector3();
-const MouseFollow = () => {
+const HeroPlane = () => {
   const ref = useRef();
   const mesh = useRef();
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
@@ -73,13 +73,13 @@ const MouseFollow = () => {
   return (
     <mesh ref={mesh}>
       <planeBufferGeometry args={[8, 8]} />
-      <mouseFollowMaterial
+      <heroPlaneMaterial
         transparent
         ref={ref}
-        key={MouseFollowMaterial.key}
+        key={HeroPlaneMaterial.key}
       />
     </mesh>
   );
 };
 
-export default MouseFollow;
+export default HeroPlane;
