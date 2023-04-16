@@ -5,25 +5,25 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const FirstSection = () => {
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+  // useEffect(() => {
+  //   gsap.registerPlugin(ScrollTrigger);
 
-    const targets = ["#outer", "#inner"];
+  //   const targets = ["#outer", "#inner"];
 
-    targets.forEach((target) => {
-      gsap.to(target, {
-        scrollTrigger: {
-          trigger: "#first-section",
-          start: "top bottom",
-          end: "bottom bottom",
-          scrub: true,
-        },
-        scale: target === "#outer" ? 1.1 : 1.3,
-        duration: 1,
-        ease: "none",
-      });
-    });
-  }, []);
+  //   targets.forEach((target) => {
+  //     gsap.to(target, {
+  //       scrollTrigger: {
+  //         trigger: "#first-section",
+  //         start: "top bottom",
+  //         end: "bottom bottom",
+  //         scrub: true,
+  //       },
+  //       scale: target === "#outer" ? 1.1 : 1.3,
+  //       duration: 1,
+  //       ease: "none",
+  //     });
+  //   });
+  // }, []);
 
   return (
     <Wrapper id="first-section">

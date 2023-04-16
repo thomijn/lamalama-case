@@ -20,10 +20,13 @@ const Button = (props) => {
   }
 
   useEffect(() => {
-    gsap.to(mask.current, {
-      y: hovered ? "0%" : "100%",
-      duration: 0.4,
-      ease: "power3.inOut",
+    let mm = gsap.matchMedia();
+    mm.add("(min-width: 800px)", () => {
+      gsap.to(mask.current, {
+        y: hovered ? "0%" : "100%",
+        duration: 0.4,
+        ease: "power3.inOut",
+      });
     });
   }, [hovered]);
 
@@ -85,6 +88,12 @@ const OutlinedButton = styled(ButtonBase)`
   &:hover {
     color: var(--color-secondary);
   }
+
+  @media (max-width: 800px) {
+    &:hover {
+      color: var(--color-text);
+    }
+  }
 `;
 
 const DefaultButton = styled(ButtonBase)`
@@ -93,6 +102,12 @@ const DefaultButton = styled(ButtonBase)`
 
   &:hover {
     color: var(--color-darkGreen);
+  }
+
+  @media (max-width: 800px) {
+    &:hover {
+      color: var(--color-text);
+    }
   }
 `;
 

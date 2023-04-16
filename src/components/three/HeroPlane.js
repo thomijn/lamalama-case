@@ -73,11 +73,7 @@ const HeroPlane = () => {
   return (
     <mesh ref={mesh}>
       <planeBufferGeometry args={[8, 8]} />
-      <heroPlaneMaterial
-        transparent
-        ref={ref}
-        key={HeroPlaneMaterial.key}
-      />
+      <heroPlaneMaterial transparent ref={ref} key={HeroPlaneMaterial.key} />
     </mesh>
   );
 };

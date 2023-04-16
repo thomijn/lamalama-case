@@ -3,6 +3,7 @@ import Head from "next/head";
 import Hero from "@/components/Hero";
 import FirstSection from "@/components/FirstSection";
 import SecondSection from "@/components/SecondSection";
+import ThirdSection from "@/components/ThirdSection";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Hero />
       <FirstSection />
       <SecondSection />
+      <ThirdSection />
     </>
   );
 }
