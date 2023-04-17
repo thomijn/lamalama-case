@@ -69,7 +69,7 @@ const ButtonBase = styled.button`
     width: 100%;
     height: 100%;
     background-color: ${(props) => props.color || "var(--color-text)"};
-    transform: translateY(-100%);
+    transform: translateY(100%);
     z-index: 1;
   }
 `;

@@ -66,6 +66,13 @@ const CardWrapper = styled.div`
   @media (max-width: 768px) {
     min-width: 300px;
     height: 440px;
+
+    .card-content {
+      h2 {
+        font-size: 40px;
+        line-height: 2.8rem;
+      }
+    }
   }
 `;
 

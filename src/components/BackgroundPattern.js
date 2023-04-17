@@ -3,7 +3,7 @@ import React from "react";
 const BackgroundPattern = ({ styles, props }) => {
   return (
     <svg
-      viewBox="0 0 1000 1000" // set viewBox to fit the entire path
+      viewBox="0 0 1000 1000"
       fill="none"
       style={styles}
       {...props}

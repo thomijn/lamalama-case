@@ -13,13 +13,12 @@ const SecondSection = () => {
   useLayoutEffect(() => {
     const ctx = gsap.context((self) => {
       gsap.registerPlugin(ScrollTrigger);
-      //get card width
       const cardWidth = document.querySelector(".card").offsetWidth;
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: main.current,
           start: "top top",
-          end: "100%",
+          end: `+=${cardWidth * 5 + 280 - window.innerWidth}`,
           scrub: 1,
           pin: true,
           anticipatePin: 1,

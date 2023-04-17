@@ -1,32 +1,38 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import styled from "styled-components";
-import Button from "./Button";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
+import Button from "./Button";
+
 const FirstSection = () => {
-  // useEffect(() => {
-  //   gsap.registerPlugin(ScrollTrigger);
+  const main = useRef();
 
-  //   const targets = ["#outer", "#inner"];
+  useEffect(() => {
+    const ctx = gsap.context((self) => {
+      gsap.registerPlugin(ScrollTrigger);
 
-  //   targets.forEach((target) => {
-  //     gsap.to(target, {
-  //       scrollTrigger: {
-  //         trigger: "#first-section",
-  //         start: "top bottom",
-  //         end: "bottom bottom",
-  //         scrub: true,
-  //       },
-  //       scale: target === "#outer" ? 1.1 : 1.3,
-  //       duration: 1,
-  //       ease: "none",
-  //     });
-  //   });
-  // }, []);
+      const targets = ["#outer", "#inner"];
+
+      targets.forEach((target) => {
+        gsap.to(target, {
+          scrollTrigger: {
+            trigger: main.current,
+            start: "top bottom",
+            end: "bottom bottom",
+            scrub: true,
+          },
+          scale: target === "#outer" ? 1.1 : 1.3,
+          duration: 1,
+          ease: "none",
+        });
+      });
+    }, main);
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <Wrapper id="first-section">
+    <Wrapper ref={main} id="first-section">
       <div className="content">
         <h2>
           Two things you don’t need. More plastic stuff with logo’s on it and
